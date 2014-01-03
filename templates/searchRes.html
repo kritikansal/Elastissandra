@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block search %}
+<h1>Search Results</h1> 
+	<div id="contact_form">
+	<table>
+    {% for item in respDict %}
+    <tr>
+    <td><label> {{ respDict[item] }} </label></td>
+    </tr>
+  	{% endfor %}
+  	</table>
+  	<table>
+	</div>
+Done...:)
+{% endblock %}

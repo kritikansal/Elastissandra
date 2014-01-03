@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+  
+{% block insert %}
+<h1>Insert</h1> 
+	<div id="contact_form">
+    	<form method="post" action="/insert">
+			<table>
+				<tr>
+					<td>
+						<label for="csvfile">Select a file: </label>
+					</td>
+					<td>
+						<input type="file" name="filePath"> 
+					</td>
+				</tr>
+    			<tr>
+					<td colspan=2>
+						<input type="submit" name="submit" id="submit" value="Submit" />
+					</td>
+    			</tr>
+   			</table>
+		</form>
+{% endblock %}

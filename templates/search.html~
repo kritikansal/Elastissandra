@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+  
+{% block search %}
+	<h1>Search</h1> 
+	<div id="contact_form">
+    <form method="post" action="/search">
+    <label for="user">Tweet Words:</label> <input type="text" id="tweetWords" name="tweetWords" class="required input_field" />
+    <div class="cleaner_h10"></div>
+    <input type="submit" name="submit" id="submit" value="Submit" />
+    <input type="reset" name="reset" id="reset" value="Reset" />
+    </form>
+	</div>
+{% endblock %}

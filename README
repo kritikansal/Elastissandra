@@ -1,0 +1,24 @@
+Instructions for running:
+	Run init.py using "python init.py".
+	open http://127.0.0.1:5000/ in browser.
+	Use UI to insert new Csv file and search top tweets related to given query.
+
+Approach:
+	- Load Twitter data in the Cassandra Cluster.
+ 	- Index it using ElasticSearch.
+ 	- Weight matrix is constructed for each tweet containing words belonging to that tweet along with the corresponding frequencies.
+ 	- Random Tweets selected as centroids.
+ 	- For a cluster, selection of tweets containing atleast one similar word using elasticsearch.
+ 	- Assignment based on distance from each cluster in case of conflicts.
+ 	- Update centroids on each iteration.
+ 	- Given a query, selection of cluster with minimum distance.
+ 	- Extract information of all tweets belonging to that cluster from Cassandra.
+
+Observation:
+	- Without Cassandra on multinode Large Data Sets cannot be handeled
+	- Without Elastic Search Time Required for clustering using K-means is sifnificantly higher.
+
+Future Work:
+	- The next steps would be to reduce run-time on bigger datasets and cluster them in real-time. This may involve using a database for 		storing the word occurrence counts.
+	- With more documents, we may have to do some kind of filtering to reduce the size of the weight matrix and remove outdated edges. 
+	- There might be other clustering methods that can be explored to reduce the time taken for clustering
